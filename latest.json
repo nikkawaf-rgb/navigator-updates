@@ -1,0 +1,14 @@
+{
+  "payload": {
+    "latest": "1.3.1",
+    "url": "https://github.com/nikkawaf-rgb/navigator-updates/releases/download/v1.3.1/Navigator-Assistant-1.3.1-portable.zip",
+    "urls": [
+      "https://disk.yandex.ru/d/jwQ64pHulcJo-Q/Navigator-Assistant-1.3.1-portable.zip"
+    ],
+    "sha256": "7060719f6586de72d6054fea4e00ab61760fc6a4997fc0069a3f8538a10bb758",
+    "note": "первый выпуск с обновлениями по сети",
+    "updated": "13.10.2026",
+    "auto": true
+  },
+  "sig": "pII3MntWLqF9x00txhd4p/0S+RjPdCdcQlHVBniSuWLtcielShST3BtKIjExSBQmadm3HlVzdTk1FMqU5wwaAw=="
+}
