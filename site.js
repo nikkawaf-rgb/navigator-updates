@@ -147,28 +147,45 @@
       if (videoNote) videoNote.textContent = cfg.videoNote || "";
       if (block) block.hidden = false;
     }
+    // Ссылки на скачивание. Три кнопки одного блока: архив (адрес приходит из
+    // манифеста), страница со всеми версиями и установщиком, и — только если
+    // зеркало когда-нибудь настроят — вторая дорога для сетей без GitHub.
+    // Пока `mirrorUrl` пуст, кнопка зеркала в разметке скрыта: обещать «скачать
+    // без GitHub» там, где зеркала нет, — хуже, чем молчать.
     const releases = document.getElementById("foot-releases");
     if (releases && cfg.releasesUrl) releases.href = cfg.releasesUrl;
+    const allFiles = document.getElementById("dl-releases");
+    if (allFiles && cfg.releasesUrl) allFiles.href = cfg.releasesUrl;
     const mirror = document.getElementById("dl-mirror");
-    if (mirror && cfg.mirrorUrl) mirror.href = cfg.mirrorUrl;
-    const techMirror = document.getElementById("tech-mirror");
-    if (techMirror && cfg.mirrorUrl) techMirror.textContent = cfg.mirrorUrl;
+    if (mirror && cfg.mirrorUrl) {
+      mirror.href = cfg.mirrorUrl;
+      mirror.hidden = false;
+    }
   }
 
   function showLinks(payload) {
     const url = (payload && (payload.url || (payload.urls || [])[0])) || "";
+    const size = humanSize(payload && payload.size);
     const main = document.getElementById("dl-main");
     if (main) {
       main.href = url || (cfg.releasesUrl || "#");
-      main.textContent = url ? "скачать архив" : "страница загрузки";
+      // Размер прямо в кнопке: человек заранее видит, сколько качать (72 МБ по
+      // школьному интернету — это заметное время, и лучше знать об этом заранее).
+      main.textContent = url
+        ? "скачать архив" + (size ? " (" + size + ")" : "")
+        : "страница загрузки";
     }
     const techMain = document.getElementById("tech-main");
     if (techMain) {
       techMain.textContent = url || "адрес указан в манифесте обновлений";
     }
-    const mirror = (payload && (payload.urls || [])[0]) || "";
+    // Строка «Зеркало» не пустует: пустая клетка читается как «не догрузилось»,
+    // а честное «нет» — как ответ на вопрос ИТ-службы.
+    const mirror = (payload && (payload.urls || [])[0]) || cfg.mirrorUrl || "";
     const techMirror = document.getElementById("tech-mirror");
-    if (techMirror && mirror) techMirror.textContent = mirror;
+    if (techMirror) {
+      techMirror.textContent = mirror || "нет — обновления идут только через GitHub";
+    }
   }
 
   async function main() {
