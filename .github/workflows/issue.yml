@@ -1,0 +1,24 @@
+name: navigator-issue
+
+# Резервный планировщик выдачи ключей: сервис триггеров Yandex Cloud сейчас
+# нестабилен, поэтому раз в 5 минут дёргаем функцию по её адресу с паролем.
+# Функция сама ничего не выдаёт дважды: обслуженные заказы отсеиваются по YDB.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask the function to issue keys
+        env:
+          NAV_URL: ${{ secrets.NAV_URL }}
+        run: |
+          code=$(curl -sS -m 120 -o answer.json -w "%{http_code}" "$NAV_URL")
+          echo "HTTP $code"
+          cat answer.json
+          echo
+          test "$code" = "200"
+          ! grep -q '"status": "error"' answer.json
