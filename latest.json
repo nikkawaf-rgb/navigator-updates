@@ -2,13 +2,13 @@
   "payload": {
     "latest": "1.4.1",
     "url": "https://github.com/nikkawaf-rgb/navigator-updates/releases/download/v1.4.1/Navigator-Assistant-1.4.1-update.zip",
-    "sha256": "b67bf09db6a38509ebe37dd56581926cf37293160c94cc80c72969608ff1b16c",
-    "size": 75541988,
+    "sha256": "2026a337932600047bc2cffffae92c4dc287fc116a03e504955b755bd472e747",
+    "size": 75542268,
     "setup": "https://github.com/nikkawaf-rgb/navigator-updates/releases/latest/download/Navigator-Assistant-setup.exe",
     "min_write": "1.3.1",
     "note": "обновление ставится на месте: пароль и ключ сохраняются",
-    "updated": "19.10.2026",
+    "updated": "20.10.2026",
     "auto": true
   },
-  "sig": "epzFN3IJzcm+W4QLDMD/xdtJxzHAqHKc0JCmCYM//ENtLarCkBGNnC6o2Y+4JiDD3/dSNgsn2oOUD8CsJvv4DA=="
+  "sig": "F0p0tqVLaO4SowaDJOpf1JoIqFeV/KQK6z+xHk4Nk713WSzx0iB6kVRuoBKogVwShqihOjZjqKC6ZVX4iC/9Bw=="
 }
