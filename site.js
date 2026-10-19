@@ -129,7 +129,7 @@
     if (note) note.textContent = cfg.priceNote || "";
     if (button && cfg.buyUrl) {
       button.href = cfg.buyUrl;
-      button.textContent = cfg.buyLabel || "Купить";
+      button.textContent = cfg.buyLabel || "Разблокировать все функции программы";
       button.hidden = false;
     } else if (missing) {
       missing.hidden = false;
