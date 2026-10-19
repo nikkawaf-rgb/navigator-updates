@@ -1,13 +1,14 @@
 {
   "payload": {
-    "latest": "1.4.0",
-    "url": "https://github.com/nikkawaf-rgb/navigator-updates/releases/download/v1.4.0/Navigator-Assistant-1.4.0-update.zip",
-    "sha256": "ce62e05cce6b8e3ace4fe330ed6b79294a37d22eac4798ba6f202d3d7d60d1dc",
-    "size": 75529013,
+    "latest": "1.4.1",
+    "url": "https://github.com/nikkawaf-rgb/navigator-updates/releases/download/v1.4.1/Navigator-Assistant-1.4.1-update.zip",
+    "sha256": "b67bf09db6a38509ebe37dd56581926cf37293160c94cc80c72969608ff1b16c",
+    "size": 75541988,
+    "setup": "https://github.com/nikkawaf-rgb/navigator-updates/releases/latest/download/Navigator-Assistant-setup.exe",
     "min_write": "1.3.1",
-    "note": "вкладка «О программе»: ссылки на сайт и магазин, кнопка «Разблокировать все функции программы»",
+    "note": "обновление ставится на месте: пароль и ключ сохраняются",
     "updated": "19.10.2026",
     "auto": true
   },
-  "sig": "deSHfXwe7J6UMgHNoyLKh3nfoJnEgaLJlTm/U5a83G28RhRdaK8tblbskmzryTBRrlWqebnZQcxPzcUj3QV8Aw=="
+  "sig": "epzFN3IJzcm+W4QLDMD/xdtJxzHAqHKc0JCmCYM//ENtLarCkBGNnC6o2Y+4JiDD3/dSNgsn2oOUD8CsJvv4DA=="
 }
