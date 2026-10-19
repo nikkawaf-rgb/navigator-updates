@@ -164,16 +164,15 @@
   }
 
   function showLinks(payload) {
-    const url = (payload && (payload.url || (payload.urls || [])[0])) || "";
-    const size = humanSize(payload && payload.size);
+    // Кнопка ведёт на постоянный адрес установщика: портативного архива больше
+    // нет, а адрес из манифеста — это архив автообновления, человеку он ни к
+    // чему (и размер у него другой). Постоянная ссылка не меняется от версии
+    // к версии, поэтому её можно вписать в карточку товара один раз.
+    const url = cfg.setupUrl || cfg.releasesUrl || "";
     const main = document.getElementById("dl-main");
     if (main) {
-      main.href = url || (cfg.releasesUrl || "#");
-      // Размер прямо в кнопке: человек заранее видит, сколько качать (72 МБ по
-      // школьному интернету — это заметное время, и лучше знать об этом заранее).
-      main.textContent = url
-        ? "скачать архив" + (size ? " (" + size + ")" : "")
-        : "страница загрузки";
+      main.href = url || "#";
+      main.textContent = url ? "скачать установщик" : "страница загрузки";
     }
     const techMain = document.getElementById("tech-main");
     if (techMain) {

@@ -56,5 +56,12 @@ window.SITE = {
 
   /* Адрес в «релизах» GitHub, где лежат файлы: подставляется в блок для ИТ-службы,
    * если в манифесте адреса почему-то нет. */
-  releasesUrl: "https://github.com/nikkawaf-rgb/navigator-updates/releases/latest"
+  releasesUrl: "https://github.com/nikkawaf-rgb/navigator-updates/releases/latest",
+
+  /* Постоянный адрес установщика: имя файла не меняется от версии к версии
+   * (`publish_updates.py` кладёт копию под постоянным именем), поэтому эту
+   * ссылку можно вписать один раз — в карточку товара, в письмо, в закладки.
+   * Портативную сборку не поддерживаем: покупатель ставит программу этим
+   * установщиком, а обновления приезжают сами. */
+  setupUrl: "https://github.com/nikkawaf-rgb/navigator-updates/releases/latest/download/Navigator-Assistant-setup.exe"
 };
